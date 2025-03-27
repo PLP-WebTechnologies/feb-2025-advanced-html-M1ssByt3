@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML5 Elements and Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border: 1px solid black;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #b6ac24;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #70884a;
+        }
+        form {
+            background-color: #165cac;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #1cbfdb;
+            border-radius: 4px;
+        }
+        .radio-group, .checkbox-group {
+            margin: 10px 0;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline;
+            margin-left: 5px;
+        }
+        button {
+            background-color: #e63e20;
+            color: rgb(10, 1, 1);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e62083;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced HTML5 Elements and Forms</h1>
+    </header>
+
+    <main>
+        <section>
+            <!-- Ordered list with Roman numerals -->
+            <h2>Ordered List with Roman Numerals</h2>
+            <ol type="I">
+                <li>Introduction to HTML5</li>
+                <li>Semantic Elements</li>
+                <li>Forms and Input Types</li>
+                <li>Multimedia Elements</li>
+                <li>Validation Attributes</li>
+            </ol>
+        </section>
+
+        <section>
+            <!-- External image from pexels.com -->
+            <h2>External Image</h2>
+            <figure>
+                <img src="https://images.pexels.com/photos/6804613/pexels-photo-6804613.jpeg?auto=compress&cs=tinysrgb&w=600.jpeg?auto" alt="Coding on a laptop">
+                <figcaption>Image from Pexels: Coding on a cottonbro studio</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <!-- Table of 5 contacts -->
+            <h2>Contact Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>123 Main St, Nairobi</td>
+                        <td>+254 712 345 678</td>
+                        <td>john.doe@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>456 Park Ave, Mombasa</td>
+                        <td>+254 723 456 789</td>
+                        <td>jane.smith@yahoo.com</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Johnson</td>
+                        <td>789 Oak Rd, Kisumu</td>
+                        <td>+254 734 567 890</td>
+                        <td>michael.j@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Williams</td>
+                        <td>101 Pine St, Nakuru</td>
+                        <td>+254 745 678 901</td>
+                        <td>sarah.w@velo.com</td>
+                    </tr>
+                    <tr>
+                        <td>David Brown</td>
+                        <td>202 Cedar Ln, Eldoret</td>
+                        <td>+254 756 789 012</td>
+                        <td>david.b@tum.ac.ke</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <!-- Registration form -->
+            <h2>Registration Form</h2>
+            <form id="registration-form" novalidate>
+                <!-- First Name field -->
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+                </div>
+
+                <!-- Last Name field -->
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                </div>
+
+                <!-- Email field -->
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <!-- Password field -->
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" 
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                           title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 characters" 
+                           required>
+                    <small>Password must contain at least one number, one uppercase and lowercase letter, and at least 8 characters</small>
+                </div>
+
+                <!-- Date field -->
+                <div class="form-group">
+                    <label for="birthdate">Date of Birth:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+
+                <!-- Dropdown -->
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select your country</option>
+                        <option value="kenya">Kenya</option>
+                        <option value="uganda">Uganda</option>
+                        <option value="tanzania">Tanzania</option>
+                        <option value="rwanda">Rwanda</option>
+                        <option value="ethiopia">Ethiopia</option>
+                    </select>
+                </div>
+
+                <!-- Radio buttons -->
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+
+                <!-- Checkboxes -->
+                <div class="form-group">
+                    <label>Interests (select at least one):</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="web-dev" name="interests" value="web-development" required>
+                        <label for="web-dev">Web Development</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="mobile-dev" name="interests" value="mobile-development">
+                        <label for="mobile-dev">Mobile Development</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="data-science" name="interests" value="data-science">
+                        <label for="data-science">Data Science</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="ui-ux" name="interests" value="ui-ux">
+                        <label for="ui-ux">UI/UX Design</label>
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Audio element -->
+        <section>
+            <h2>Audio Element</h2>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <!-- Video element -->
+        <section>
+            <h2>Video Element</h2>
+            <video width="640" height="360" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Advanced HTML5 Elements and Forms</p>
+    </footer>
+</body>
+</html>
